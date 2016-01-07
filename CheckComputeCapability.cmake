@@ -2,10 +2,10 @@
 # Check for GPUs present and their compute capability
 # based on http://stackoverflow.com/questions/2285185/easiest-way-to-test-for-existence-of-cuda-capable-gpu-from-cmake/2297877#2297877 (Christopher Bruns)
 if(CUDA_FOUND)
-	message(STATUS "${CMAKE_SOURCE_DIR}/cuda_compute_capability.c")
+	message(STATUS "${CMAKE_CURRENT_LIST_DIR}/cuda_compute_capability.c")
 	try_run(RUN_RESULT_VAR COMPILE_RESULT_VAR
 		${CMAKE_BINARY_DIR} 
-		${CMAKE_SOURCE_DIR}/cuda_compute_capability.c
+		${CMAKE_CURRENT_LIST_DIR}/cuda_compute_capability.c
 		CMAKE_FLAGS 
 		-DINCLUDE_DIRECTORIES:STRING=${CUDA_TOOLKIT_INCLUDE}
 		-DLINK_LIBRARIES:STRING=${CUDA_CUDART_LIBRARY}
